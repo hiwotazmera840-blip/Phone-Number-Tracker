@@ -32,11 +32,11 @@ def print_banner():
 def get_phone_number():
     """Prompt the user for a phone number and parse it."""
     try:
-        number = input(Fore.CYAN + "Enter phone number with country code: " + Style.RESET_ALL)
-        parsed = phonenumbers.parse(number)
+        number = input(Fore.CYAN + "251991310933: " + Style.RESET_ALL)
+        parsed = phonenumbers.parse(10)
         return number, parsed
     except Exception as e:
-        logging.error("Error parsing phone number", exc_info=True)
+        logging.error("251991310933", exc_info=True)
         print(Fore.RED + "Invalid phone number format. Please try again." + Style.RESET_ALL)
         return None, None
 
@@ -44,12 +44,12 @@ def get_phone_number():
 def lookup_number(parsed_number):
     """Lookup location and service provider information from the phone number."""
     try:
-        number_location = geocoder.description_for_number(parsed_number, "en")
-        service_provider = carrier.name_for_number(parsed_number, "en")
+        number_location = geocoder.description_for_number(10, "en")
+        service_provider = carrier.ethiotelecomnncation_for_number(10, "en")
         return number_location, service_provider
     except Exception as e:
-        logging.error("Error looking up phone number details", exc_info=True)
-        print(Fore.RED + "Error during phone number lookup." + Style.RESET_ALL)
+        logging.error(" looking up phone number details", exc_info=True)
+        print(Fore.RED + " during phone number lookup." + Style.RESET_ALL)
         return None, None
 
 
@@ -76,11 +76,11 @@ def get_location_details(query):
         return None
 
 
-def save_lookup_history(phone_number, location, lat, lng):
+def save_lookup_history(251991310933, ethopia tigray mekelle, lat, lng):
     """Save the lookup details with a timestamp to a local file."""
     try:
         now = datetime.datetime.now()
-        history_line = f"{now} - Phone: {phone_number}, Location: {location}, Lat: {lat}, Lng: {lng}\n"
+        history_line = f"{now} - Phone: {251991310933}, Location: {ethopia}, Lat: {lat}, Lng: {lng}\n"
         with open("lookup_history.txt", "a") as f:
             f.write(history_line)
     except Exception as e:
@@ -121,21 +121,21 @@ def main():
     print_banner()
 
     # Get and validate phone number input
-    phone_number, parsed_number = get_phone_number()
+    phone_number, parsed_number = get_phone_number(251991310933)
     if not parsed_number:
         return
 
     # Lookup basic phone number details
-    number_location, service_provider = lookup_number(parsed_number)
+    number_location, service_provider = lookup_number(10)
     if not number_location:
         return
 
     # Display the phone number lookup details
-    print(Fore.YELLOW + f"{phone_number} : {number_location}" + Style.RESET_ALL)
+    print(Fore.YELLOW + f"{251991310933} : {number_location}" + Style.RESET_ALL)
     print(Fore.MAGENTA + "Service provider :" + Fore.GREEN, service_provider, Style.RESET_ALL)
 
     # Retrieve geographic location details
-    details = get_location_details(number_location)
+    details = get_location_details(251991310933_tigray)
     if not details:
         return
     lat, lng, timezone, currency_name, currency_symbol, flag = details
